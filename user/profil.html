@@ -1,0 +1,203 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Pengguna</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .header {
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 20px;
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .box {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+        .box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        .profile-info {
+            text-align: center;
+            margin-bottom: 20px;
+
+        }
+        .profile-picture {
+			background-size: cover;
+			background-position: center;            
+			width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        .profile-picture img {
+            width: 100%;
+            height: auto;
+        }
+        .additional-info {
+            margin-top: 20px;
+            text-align: left;
+        }
+        .additional-info p {
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #333;
+        }
+        .additional-info p:last-child {
+            margin-bottom: 0;
+        }
+        .additional-info input {
+            width: calc(100% - 100px);
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin-left: 10px;
+            transition: all 0.3s ease;
+        }
+        .divider {
+            margin-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+        }
+        .divider:last-child {
+            margin-bottom: 0;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        .additional-info input:focus {
+            border-color: #007bff;
+        }
+        .functions {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+            padding-right: 20px;
+        }
+        .functions a {
+            color: #007bff;
+            text-decoration: none;
+            margin-left: 20px;
+            transition: color 0.3s ease;
+            padding: 8px 16px;
+            border-radius: 4px;
+            border: 1px solid #007bff;
+        }
+        .functions a:hover {
+            background-color: #007bff;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <div class="container" style="height: 35px; padding-bottom: 0px; color: #007bff">
+        Anda sedang di Halaman Profil
+    </div>
+</div>
+
+<div class="container">
+    <div class="box" id="kubus1">
+        <div class="profile-info">
+            <div class="profile-picture" style="background-image: url('../img/default.png');"></div>
+            <h2 style="color: #007bff;">Nama Lengkap</h2>
+            <p style="color: #555;">Email: <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="760305130436130e171b061a135815191b">[email&#160;protected]</a></p>
+        </div>
+    </div>
+    <div class="box" id="kubus2">
+        <div class="additional-info">
+            <div class="divider">
+                <p style="color: #007bff;">Nama:</p>
+                <input type="text" name="nama" style="border-color: #007bff;">
+            </div>
+            <div class="divider">
+                <p style="color: #007bff;">Email:</p>
+                <input type="text" name="email" style="border-color: #007bff;">
+            </div>
+            <div class="divider">
+                <p style="color: #007bff;">Phone:</p>
+                <input type="text" name="phone" style="border-color: #007bff;">
+            </div>
+            <div class="divider">
+                <p style="color: #007bff;">Alamat:</p>
+                <input type="text" name="alamat" style="border-color: #007bff;">
+            </div>
+        </div>
+    </div>
+    <div class="box" id="kubus3">
+        <div class="additional-info">
+            <div class="divider">
+                <p style="color: #007bff;">Instagram:</p>
+                <input type="text" name="instagram" style="border-color: #007bff;">
+            </div>
+            <div class="divider">
+                <p style="color: #007bff;">Twitter:</p>
+                <input type="text" name="twitter" style="border-color: #007bff;">
+            </div>
+            <div class="divider">
+                <p style="color: #007bff;">Facebook:</p>
+                <input type="text" name="facebook" style="border-color: #007bff;">
+            </div>
+            <div class="divider">
+                <p style="color: #007bff;">Telegram:</p>
+                <input type="text" name="telegram" style="border-color: #007bff;">
+            </div>
+        </div>
+    </div>
+    <div class="box" id="kubus4">
+        <div class="activity-log">
+            <table style="width: 100%;">
+                <thead>
+                    <tr>
+                        <th style="color: #007bff;">No</th>
+                        <th style="color: #007bff;">Tindakan</th>
+                        <th style="color: #007bff;">Waktu</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Login</td>
+                        <td>2022-01-01 08:00:00</td>
+                    </tr>
+                    <!-- Tambahkan baris log aktivitas lainnya di sini -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="functions">
+    <a href="#">Ubah Profil</a>
+    <a href="#">Reset Password</a>
+    <a href="#">Logout</a>
+</div>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script></body>
+</html>

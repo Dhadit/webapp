@@ -1,0 +1,139 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Halaman Pendaftaran</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.signup-box {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+}
+
+.signup-box h2 {
+  margin-bottom: 20px;
+}
+
+.signup-box .error-message {
+  margin-bottom: 10px;
+  color: red;
+  font-size: 14px;
+  display: none;
+  text-align: left; /* Mengatur perataan teks menjadi kiri */
+}
+
+.signup-box .error-message p {
+  margin: 5px 0; /* Memberi ruang antara setiap paragraf */
+  font-size: 12px; /* Perkecil ukuran huruf */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Ganti gaya huruf */
+  font-style: italic; /* Tambahkan gaya huruf kursif */
+  color: red; /* Ubah warna teks menjadi merah */
+}
+
+.signup-box a {
+  color: #007bff;
+}
+
+.signup-box a:hover {
+  text-decoration: underline;
+}
+
+.signup-box input[type="text"],
+.signup-box input[type="password"],
+.signup-box input[type="email"] {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.signup-box input[type="submit"] {
+  width: calc(100% - 20px);
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
+
+.signup-box input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="signup-box">
+    <h2>Daftar</h2>
+    <form id="signupForm" action="#" method="post">
+      <input type="email" name="email" placeholder="Alamat Email" required>
+      <input type="text" name="fullname" placeholder="Nama Lengkap" required>
+      <input type="text" name="username" placeholder="Nama Pengguna" required>
+      <input type="password" name="password" id="password" placeholder="Kata Sandi" required onblur="validatePassword()">
+      <div class="error-message" id="passwordError" style="display: none;">
+        <p>Kata sandi harus memenuhi kriteria berikut:</p>
+        <ul>
+          <li>Minimal 8 karakter</li>
+          <li>Mengandung huruf kapital (A-Z)</li>
+          <li>Mengandung huruf kecil (a-z)</li>
+          <li>Mengandung angka (0-9)</li>
+          <li>Mengandung karakter spesial (misalnya: !@#$%^&*)</li>
+        </ul>
+      </div>
+      <input type="submit" value="Daftar">
+    </form>
+    <p>Sudah punya akun? <a href="login.html">Masuk</a></p>
+  </div>
+</div>
+
+<script>
+function validatePassword() {
+  var password = document.getElementById("password").value;
+  var passwordError = document.getElementById("passwordError");
+  
+  var eightChars = /.{8,}/;
+  var upperCase = /[A-Z]/;
+  var lowerCase = /[a-z]/;
+  var number = /\d/;
+  var specialChar = /[!@#$%^&*(),.?":{}|<>]/;
+
+  if (!eightChars.test(password) || !upperCase.test(password) || !lowerCase.test(password) || !number.test(password) || !specialChar.test(password)) {
+    passwordError.style.display = "block";
+    return false;
+  } else {
+    passwordError.style.display = "none";
+    return true;
+  }
+}
+
+document.getElementById("signupForm").addEventListener("submit", function(event) {
+  if (!validatePassword()) {
+    event.preventDefault();
+  }
+});
+</script>
+
+</body>
+</html>
